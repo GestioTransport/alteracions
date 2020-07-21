@@ -2,20 +2,17 @@
 <html lang="es" style="height: 100%;">
 
 <body style="padding: 0; margin: 0;height: 100%">
-    <img id="iframeid" src="https://raw.githubusercontent.com/GestioTransport/alteracions/master/loading.png" title="ALTERACIONS">
+    <img id="iframeid" src='https://sc02gataptb.pre.atm.tmob.cat/alerts/' title="ALTERACIONS">
     <p id="hora"></p>
 </body>
 <script>
-    const queryString = window.location.search;
-    const urlParams = new URLSearchParams(queryString);
-    const font = urlParams.get('font')
 
     function myFunction() {
-        myVar = setInterval(upd, 90000);
+        myVar = setInterval(periodic, 90000);
     }
 
     function actualitza(){
-        document.getElementById('iframeid').src = font;
+        document.getElementById('iframeid').src = 'https://sc02gataptb.pre.atm.tmob.cat/alerts/';
 
         var currentdate = new Date();
         var datetime = "Last Sync: " + currentdate.getDate() + "/"
@@ -26,7 +23,7 @@
                 + currentdate.getSeconds();
         document.getElementById("hora").innerHTML=datetime;
     }
-    function upd(){
+    function periodic(){
         actualitza();
     }
 
