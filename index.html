@@ -6,13 +6,16 @@
     <p id="hora"></p>
 </body>
 <script>
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+    const font = urlParams.get('font')
 
     function myFunction() {
         myVar = setInterval(upd, 90000);
     }
 
     function actualitza(){
-        document.getElementById('iframeid').src = 'https://login.pre.atm.tmob.cat:8443/cas/login?service=https%3A%2F%2Fsc02gataptb.pre.atm.tmob.cat%3A8443%2FcasClient%2Flogin%2Fcas';
+        document.getElementById('iframeid').src = font;
 
         var currentdate = new Date();
         var datetime = "Last Sync: " + currentdate.getDate() + "/"
